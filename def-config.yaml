@@ -1,7 +1,6 @@
 server:
   port: 3055
   base-url: /local-rescuer
-  session-store: memory
 install:
   dump:
     db:
