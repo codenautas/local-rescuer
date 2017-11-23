@@ -11,6 +11,7 @@ module.exports = function(context){
             {name:'timestamp_server' , typeName:'timestamp' , nullable:false                                                    },
             {name:'local_storage'    , typeName:'text'      , nullable:false                                                    },
             {name:'nro_ipad'         , typeName:'text'      , nullable:false                                                    },
+            {name:'user_agent'       , typeName:'text'      , nullable:false                                                    },
             
         ],
         primaryKey:['subida']

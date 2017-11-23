@@ -33,8 +33,7 @@ class AppLocalRescuer extends backendPlus.AppBackend{
         return {menu:[
             {menuType:'menu', name:'menu', label:'menú', menuContent:[
                 {menuType:'proc', name:'rescatar_local_storage', label:'rescatar local storage'},
-                {menuType:'table', name:'subidas'},
-                ,
+                {menuType:'pseudo_hdr', name:'principal', selectedByDefault:true},
             ]}
         ]}
     }
@@ -46,13 +45,9 @@ class AppLocalRescuer extends backendPlus.AppBackend{
     }
     clientIncludes(req, hideBEPlusInclusions) {
         return super.clientIncludes(req, hideBEPlusInclusions).concat(
-            { type: 'js' , src: 'offline.js'    },
-            { type: 'css', file: 'my-things2.css' }
         )
     }
-    offLine(req){
-        return {manifestName:'local-rescuer.manifest'};
-    }
+
 }
 
 new AppLocalRescuer().start();
