@@ -31,10 +31,7 @@ class AppLocalRescuer extends backendPlus.AppBackend{
     }
     getMenu(context){
         return {menu:[
-            {menuType:'menu', name:'menu', label:'menú', menuContent:[
-                {menuType:'proc', name:'rescatar_local_storage', label:'rescatar local storage'},
-                {menuType:'pseudo_hdr', name:'principal', selectedByDefault:true},
-            ]}
+            {menuType:'pseudo_hdr', name:'principal', selectedByDefault:true},
         ]}
     }
     getTables(){

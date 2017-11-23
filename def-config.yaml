@@ -5,12 +5,7 @@ server:
 install:
   dump:
     db:
-      owner: rescuer_owner
-    scripts:
-      post-adapt: 
-      - pg-partents.sql
-      - casilleros_orden_total_fun.sql
-      - casilleros_jerarquizados_fun.sql
+      owner: rescuer_owner      
     skip-content: true
 login:
   table: usuarios

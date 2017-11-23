@@ -14,7 +14,7 @@ function onclickUrl(event) {
 
 function rescatar() {  
     var nroIpad = document.getElementById('ipadNbr').value;
-    c.post({
+    AjaxBestPromise.post({
         url: location.protocol + '//' + location.hostname + (location.port? ':' + location.port:'')+ '/local-rescuer/rescatar',
         data: {
             timestamp_dm: JSON.stringify(new Date().getTime()),
@@ -23,7 +23,7 @@ function rescatar() {
             user_agent: navigator.userAgent
         }
     }).then(function (result) {
-        console.log('transmitir');
+        console.log('rescatado');
     }).catch(function (err) {
         console.log(err);
     });
@@ -31,12 +31,12 @@ function rescatar() {
 }
 
 myOwn.wScreens.JSON=function(addrParams){
-    main_layout.innerHTML="HOLA";
-    var transmitirButton = html.button({id:'transmitir', class:'rel_button'}, "Transmitir").create();
+    main_layout.innerHTML="Ingrese nro de Ipad: ";
+    var transmitirButton = html.button({id:'rescue', class:'rel_button'}, "Rescatar").create();
     transmitirButton.onclick=rescatar;
 
 
-    main_layout.appendChild(html.input({id:"ipadNbr", type:'text'}));
+    main_layout.appendChild(html.input({id:"ipadNbr", type:'text'}).create());
     main_layout.appendChild(transmitirButton);
 }
 

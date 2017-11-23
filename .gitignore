@@ -1,1 +1,7 @@
 local-config.yaml
+node_modules
+last-pg-error-local.sql
+local-db-dump.sql
+local-db-dump-create-db.sql
+.vscode/launch.json
+sessions/local-start
