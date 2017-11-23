@@ -1,0 +1,42 @@
+{
+  "name": "local-rescuer",
+  "description": "Misión de rescate local storage para ipads",
+  "version": "1.0.8",
+  "author": "Codenautas <codenautas@googlegroups.com>",
+  "license": "MIT",
+  "main": "server/server-local-rescuer.js",
+  "files": [
+    "client",
+    "install",
+    "server",
+    "unlogged"
+  ],
+  "dependencies": {
+    "backend-plus": "~0.18.34"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec --bail --check-leaks test/",
+    "test-nc": "mocha --reporter spec --bail --check-leaks --no-colors test/",
+    "test-ci": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --reporter spec --check-leaks test/",
+    "test-cov": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --check-leaks test/",
+    "test-cli": "node server/karma-server.js --karma karma.conf.js --single-run",
+    "test-cli-h": "node server/karma-server.js --karma karma.conf.js",
+    "test-cli-ff": "npm run test-cli -- --browsers Firefox",
+    "test-cli-saf": "npm run test-cli -- --browsers Safari",
+    "start": "node server/server-local-rescuer.js",
+    "report": "istanbul report",
+    "all": "npm test && npm run test-cov && npm run report && qa-control . -v"
+  },
+  "qa-control": {
+    "package-version": "0.3.0",
+    "coverage": 90,
+    "run-in": "server",
+    "stability": "extending",
+    "type": "app",
+    "ecmaVersion": 6
+  }
+}
