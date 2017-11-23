@@ -1,7 +1,7 @@
 {
   "name": "local-rescuer",
   "description": "Misión de rescate local storage para ipads",
-  "version": "1.0.8",
+  "version": "0.0.1",
   "author": "Codenautas <codenautas@googlegroups.com>",
   "license": "MIT",
   "main": "server/server-local-rescuer.js",
