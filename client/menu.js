@@ -15,7 +15,7 @@ function onclickUrl(event) {
 function rescatar() {  
     var nroIpad = document.getElementById('ipadNbr').value;
     AjaxBestPromise.post({
-        url: location.protocol + '//' + location.hostname + (location.port? ':' + location.port:'')+ '/local-rescuer/rescatar',
+        url: location.href.substr(0,location.href.indexOf('/menu')) + '/rescatar',
         data: {
             timestamp_dm: JSON.stringify(new Date().getTime()),
             local_storage: JSON.stringify(localStorage),
