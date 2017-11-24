@@ -23,9 +23,10 @@ function rescatar() {
             user_agent: navigator.userAgent
         }
     }).then(function (result) {
-        console.log('rescatado');
+        document.getElementById('messageHolder').innerText='guardado';
+        document.getElementById('ipadNbr').value='';
     }).catch(function (err) {
-        console.log(err);
+        document.getElementById('messageHolder').innerText=err.message;
     });
 
 }
@@ -35,8 +36,8 @@ myOwn.wScreens.JSON=function(addrParams){
     var transmitirButton = html.button({id:'rescue', class:'rel_button'}, "Rescatar").create();
     transmitirButton.onclick=rescatar;
 
-
     main_layout.appendChild(html.input({id:"ipadNbr", type:'text'}).create());
+    main_layout.appendChild(html.p({id:"messageHolder"}).create());
     main_layout.appendChild(transmitirButton);
 }
 

@@ -17,6 +17,7 @@ var ProceduresLocalRescuer = [
             console.log("parameters:", parameters);
             var client=context.client;
             var be=context.be;
+            parameters.nro_ipad = !!parameters.nro_ipad? parameters.nro_ipad: null;
             return Promise.resolve().then(function(){
                 return client.query("insert into subidas(timestamp_dm, timestamp_server, local_storage, nro_ipad, user_agent) values ($1, current_timestamp, $2, $3, $4) returning subida",
                     [new Date(parameters.timestamp_dm), parameters.local_storage, parameters.nro_ipad, parameters.user_agent]).fetchUniqueRow();
